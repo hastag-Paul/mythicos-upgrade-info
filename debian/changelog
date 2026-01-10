@@ -1,3 +1,9 @@
+mint-upgrade-info (1.3.0) zena; urgency=medium
+
+  * Open path towards 22.x -> 22.3
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 10 Jan 2026 16:22:09 +0000
+
 mint-upgrade-info (1.2.9) zara; urgency=medium
 
   * Open path towards 22.0 -> 22.2
