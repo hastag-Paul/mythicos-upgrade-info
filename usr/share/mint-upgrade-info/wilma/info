@@ -1,4 +1,4 @@
 [general]
-target_name = "Linux Mint 22.2 Zara"
-target_codename = zara
+target_name = "Linux Mint 22.3 Zena"
+target_codename = zena
 editions = cinnamon, mate, xfce
