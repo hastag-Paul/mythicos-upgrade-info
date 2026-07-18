@@ -26,15 +26,15 @@ jobs:
             fakeroot \
             build-essential
 
-      - name: Prepare build directory
+      - name: Prepare source directory
         run: |
-          mkdir build
+          mkdir src
           shopt -s extglob
-          cp -r !(build) build/
+          cp -r !(src) src/
 
       - name: Build package
         run: |
-          cd build
+          cd src
           dpkg-buildpackage -us -uc
 
       - name: Upload artifacts
@@ -42,8 +42,8 @@ jobs:
         with:
           name: mythicos-upgrade-info-build
           path: |
-            build/*.deb
-            build/*.changes
-            build/*.buildinfo
-            build/*.dsc
-            build/*.tar.*
+            ${{ github.workspace }}/*.deb
+            ${{ github.workspace }}/*.changes
+            ${{ github.workspace }}/*.buildinfo
+            ${{ github.workspace }}/*.dsc
+            ${{ github.workspace }}/*.tar.*
