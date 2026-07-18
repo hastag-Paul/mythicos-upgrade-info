@@ -35,8 +35,8 @@ jobs:
         with:
           name: mythicos-upgrade-info-build
           path: |
-            ../*.deb
-            ../*.changes
-            ../*.buildinfo
-            ../*.dsc
-            ../*.tar.*
+            ${{ github.workspace }}/*.deb
+            ${{ github.workspace }}/*.changes
+            ${{ github.workspace }}/*.buildinfo
+            ${{ github.workspace }}/*.dsc
+            ${{ github.workspace }}/*.tar.*
