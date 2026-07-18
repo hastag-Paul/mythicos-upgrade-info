@@ -1,0 +1,42 @@
+name: Build mythicos-upgrade-info
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Debian build tools
+        run: |
+          sudo apt update
+          sudo apt install -y \
+            devscripts \
+            debhelper \
+            fakeroot \
+            build-essential
+
+      - name: Build package
+        run: |
+          dpkg-buildpackage -us -uc
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mythicos-upgrade-info-build
+          path: |
+            ../*.deb
+            ../*.changes
+            ../*.buildinfo
+            ../*.dsc
+            ../*.tar.*
