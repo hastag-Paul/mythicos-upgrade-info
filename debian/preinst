@@ -6,6 +6,9 @@ case "$1" in
     install|upgrade)
         echo "Removing previous content in /usr/share/mint-upgrade-info..."
         rm -rf /usr/share/mint-upgrade-info/* || echo "Failed to remove old files."
+
+        echo "Removing previous content in /usr/share/mythicos-upgrade-info..."
+        rm -rf /usr/share/mythicos-upgrade-info/* || echo "Failed to remove old files."
     ;;
     abort-upgrade)
     ;;
