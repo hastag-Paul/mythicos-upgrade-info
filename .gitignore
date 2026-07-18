@@ -1,4 +1,5 @@
 debian/files
 debian/mint-upgrade-info/
+debian/mythicos-upgrade-info/
 debian/*debhelper*
 debian/*substvar*
