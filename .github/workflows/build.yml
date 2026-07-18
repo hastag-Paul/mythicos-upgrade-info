@@ -29,7 +29,8 @@ jobs:
       - name: Prepare build directory
         run: |
           mkdir build
-          cp -r * build/
+          shopt -s extglob
+          cp -r !(build) build/
 
       - name: Build package
         run: |
